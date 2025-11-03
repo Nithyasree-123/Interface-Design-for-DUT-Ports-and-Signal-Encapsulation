@@ -132,10 +132,4 @@ endmodule
 
 ### Result
 
-The Interface Design for DUT Ports and Signal Encapsulation was successfully implemented and verified using SystemVerilog.
-The experiment demonstrated efficient connectivity between the DUT and testbench using an interface with modports, ensuring better readability, reusability, and verification modularity.
-
-
-
-    modport TB_side  (input clk, rst, data_out, output data_in, valid);
-endinterface
+The Interface Design for DUT Ports and Signal Encapsulation was successfully implemented and verified using SystemVerilog. The experiment demonstrated efficient connectivity between the DUT and testbench using an interface with modports, ensuring better readability, reusability, and verification modularity.
