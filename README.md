@@ -1,20 +1,20 @@
-# Experiment 7: Interface Design for DUT Ports and Signal Encapsulation
+# EXPERIMENT 7: INTERFACE DESIGN FOR DUT PORTS AND SIGNAL ENCAPSULATION
 
 ---
 
-## Aim  
+## AIM: 
 To design a **SystemVerilog interface** for encapsulating signals between a **Design Under Test (DUT)** and its **testbench**, ensuring efficient connectivity and modular design verification.
 
 ---
 
-## Apparatus Required  
+## APPARATUS REQUIRED:
 - Computer with **Windows OS**  
 - **ModelSim 2020.1** (or later) or **EDA Playground**  
 - **SystemVerilog source code editor**
 
 ---
 
-## Description  
+## DESCRIPTION:  
 In complex designs, connecting multiple signals between the **testbench** and **DUT** can be error-prone.  
 SystemVerilog **interfaces** provide a way to **bundle related signals** into a single hierarchical structure, simplifying port connections and improving reusability.
 
@@ -25,7 +25,7 @@ In this experiment:
 
 ---
 
-## Features  
+## FEATURES:
 - Clean and modular **DUT–testbench** connection  
 - Demonstrates **signal encapsulation** using `interface`  
 - Implements **modport direction control**  
@@ -33,7 +33,7 @@ In this experiment:
 
 ---
 
-## Procedure  
+## PROCEDURE: 
 
 1. **Open ModelSim or EDA Playground**  
    - Create a new SystemVerilog project named `Interface_Design_Project`.
@@ -58,9 +58,9 @@ In this experiment:
 
 ---
 
-## SystemVerilog Code
+## SYSTEMVERILOG CODE:
 
-### Interface Definition
+### INTERFACE DEFINITION:
 ```systemverilog
 interface dut_if (input logic clk, input logic rst);
     logic [7:0] data_in;
@@ -72,7 +72,7 @@ interface dut_if (input logic clk, input logic rst);
     modport TB_side  (input clk, rst, data_out, output data_in, valid);
 endinterface
 ```
-### Design Under Test
+### DESIGN UNDER TEST
 ```
 module dut (dut_if.DUT_side bus);
     always_ff @(posedge bus.clk or posedge bus.rst) begin
@@ -83,7 +83,7 @@ module dut (dut_if.DUT_side bus);
     end
 endmodule
 ```
-### Testbench
+### TESTBENCH:
 ```
 module dut_tb;
     logic clk, rst;
@@ -126,10 +126,11 @@ module dut_tb;
     end
 endmodule
 ```
-### Simulation Output
+## SIMULATION OUTPUT: 
 
---- PAste the output here
+<img width="1920" height="1080" alt="Screenshot 2025-11-10 203609" src="https://github.com/user-attachments/assets/295197e3-d992-4aad-b379-a80d64304643" />
 
-### Result
+
+## RESULTS: 
 
 The Interface Design for DUT Ports and Signal Encapsulation was successfully implemented and verified using SystemVerilog. The experiment demonstrated efficient connectivity between the DUT and testbench using an interface with modports, ensuring better readability, reusability, and verification modularity.
